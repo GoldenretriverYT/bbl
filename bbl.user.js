@@ -145,7 +145,7 @@ var patches = [
             buy.onclick = () => {
                 fetch("/shop.php", {
                     method: "POST",
-                    body: "item=" + item.itemId,
+                    body: "item=" + item.itemId + "&submit=Buy",
                     headers: {
                         "Content-Type": "application/x-www-form-urlencoded"
                     },
