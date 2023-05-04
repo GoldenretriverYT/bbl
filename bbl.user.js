@@ -73,6 +73,7 @@ var patches = [
             padding: 10px;
             margin: 10px;
             width: 200px;
+            background-color: #cbf0f5;
         }`;
 
         document.head.appendChild(style);
@@ -86,9 +87,10 @@ var patches = [
         for (var i = 0; i < h3s.length; i++) {
             items.push({
                 name: h3s[i].innerText,
-                price: h3s[i].nextElementSibling.textContent,
-                preview: h3s[i].nextElementSibling.nextElementSibling.nextElementSibling,
-                itemId: h3s[i].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[0].value
+                creator: h3s[i].nextElementSibling.textContent,
+                price: h3s[i].nextElementSibling.nextElementSibling.textContent,
+                preview: h3s[i].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling,
+                itemId: h3s[i].nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.children[0].value
             });
         }
 
@@ -126,6 +128,11 @@ var patches = [
 
             var name = document.createElement("h3");
             name.innerText = item.name;
+            name.style.marginBottom = "0px";
+
+            var creator = document.createElement("p");
+            creator.innerText = "By " + item.creator.split(": ")[1];
+            creator.style.margin = "0px";
 
             var price = document.createElement("p");
             price.innerText = item.price;
@@ -136,6 +143,7 @@ var patches = [
             preview.style.height = "auto";
 
             el.appendChild(name);
+            el.appendChild(creator);
             el.appendChild(price);
             el.appendChild(preview);
 
@@ -154,6 +162,15 @@ var patches = [
                     window.location.reload();
                 });
             };
+            buy.style.width = "100%";
+            buy.style.height = "30px";
+            buy.style.margin = "10px";
+            buy.style.fontFamily = "Arial";
+            buy.style.backgroundColor = "#4CAF50";
+            buy.style.border = "none";
+            buy.style.color = "white";
+            buy.style.borderRadius = "5px";
+            buy.style.cursor = "pointer";
 
             el.appendChild(buy);
 
