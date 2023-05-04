@@ -7,5 +7,9 @@
 // @match        *://*.block-lands.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=block-lands.com
 // @grant        none
-// @updateURL   
+// @updateURL    https://github.com/GoldenretriverYT/bbl/blob/main/bbl.user.js
 // ==/UserScript==
+
+(function() {
+    console.log("yippie!");
+})();
